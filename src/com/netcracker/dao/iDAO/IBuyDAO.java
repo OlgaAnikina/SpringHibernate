@@ -13,4 +13,5 @@ public interface IBuyDAO {
     Buy findBuyById(int id);
 
     void deleteBuyById(int id);
+    void updateBuy(Buy buy);
 }

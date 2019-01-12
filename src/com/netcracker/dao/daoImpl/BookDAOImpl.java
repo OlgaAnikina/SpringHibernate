@@ -39,4 +39,8 @@ public class BookDAOImpl extends BasicDAO implements IBookDAO {
         query.setInteger("id", id);
         query.executeUpdate();
     }
+
+    public void updateBook(Book book) {
+        getSession().update(book);
+    }
 }

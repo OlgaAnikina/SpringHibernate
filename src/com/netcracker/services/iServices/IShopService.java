@@ -10,4 +10,5 @@ public interface IShopService {
     List<Shop> findAllShops();
     Shop findShopById(int id);
     void deleteShopById(int id);
+    void updateShop(Shop shop);
 }

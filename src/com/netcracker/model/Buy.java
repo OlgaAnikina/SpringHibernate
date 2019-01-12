@@ -20,17 +20,17 @@ public class Buy {
     @Column(name="datebuys", nullable = false)
     private Date dateBuy;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "saller")
     private Shop saller;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "buyer")
     private Buyer buyer;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "book")
     private Book book;
 
@@ -42,6 +42,10 @@ public class Buy {
         this.count = count;
         this.dateBuy = dateBuy;
 
+    }
+
+    public int getMonth() {
+        return dateBuy.getMonth();
     }
 
     public int getId() {

@@ -9,5 +9,6 @@ public interface IBuyerService {
     List<Buyer> findAllBuyers();
     Buyer findBuyerById(int id);
     void deleteBuyerById(int id);
+    void updateBuyer(Buyer buyer);
 
 }

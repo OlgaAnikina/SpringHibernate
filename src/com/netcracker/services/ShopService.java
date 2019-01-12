@@ -35,4 +35,7 @@ public class ShopService implements IShopService {
 
         shopDAO.deleteShopById(id);
     }
+
+    @Override
+    public void updateShop(Shop shop) { shopDAO.updateShop(shop);}
 }

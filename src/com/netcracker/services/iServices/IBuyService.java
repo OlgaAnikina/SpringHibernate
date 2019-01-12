@@ -9,4 +9,5 @@ public interface IBuyService {
     List<Buy> findAllBuys();
     Buy findBuyById(int id);
     void deleteBuyById(int id);
+    void updateBuy(Buy buy);
 }

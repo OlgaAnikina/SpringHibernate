@@ -1,19 +1,16 @@
 package com.netcracker;
 
 import com.netcracker.config.SpringConfig;
-import com.netcracker.model.Book;
-import com.netcracker.model.Buy;
-import com.netcracker.model.Buyer;
-import com.netcracker.model.Shop;
 import com.netcracker.services.iServices.IBookService;
 import com.netcracker.services.iServices.IBuyService;
 import com.netcracker.services.iServices.IBuyerService;
 import com.netcracker.services.iServices.IShopService;
+import com.netcracker.tasks.TaskFive;
+import com.netcracker.tasks.TaskFourth;
+import com.netcracker.tasks.TaskThree;
+import com.netcracker.tasks.TaskTwo;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-
-import java.sql.Date;
-import java.util.List;
 
 public class Main {
 
@@ -27,24 +24,20 @@ public class Main {
                 (IBookService) context.getBean("bookService");
         IShopService shopService =
                 (IShopService) context.getBean("shopService");
-
-
         IBuyService buyService =
                 (IBuyService) context.getBean("buyService");
-        Buy buy = new Buy (100, 2, new Date(System.currentTimeMillis()));
-        Book book1 = new Book("Щерук ищщл", 100, "Sklad2", 1);
-        Buyer buyer1 = new Buyer( "Vik","Soviet",10);
-        Shop shop1 = new Shop("shop3", "Soviet", 200);
-        buy.setBook(book1);
-        buy.setBuyer(buyer1);
-        buy.setSaller(shop1);
 
-        buyerService.saveBuyer(buyer1);
-        shopService.saveShop(shop1);
-        bookService.saveBook(book1);
-        buyService.saveBuy(buy);
-        List<Buy> buyList = buyService.findAllBuys();
-        System.out.println(buyList.size());
+        System.out.println("TASK TWO:");
+        TaskTwo.getInfo(bookService, buyService, buyerService);
+
+        System.out.println("TASK THREE:");
+        TaskThree.getInfo(buyerService, bookService, shopService);
+
+        System.out.println("TASK FOUR:");
+        TaskFourth.getInfo(buyService);
+
+        System.out.println("TASK FIVE:");
+        TaskFive.getInfo(buyService);
 
 
 

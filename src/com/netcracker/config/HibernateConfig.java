@@ -2,7 +2,6 @@ package com.netcracker.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,22 +26,22 @@ public class HibernateConfig {
     @Autowired
     public DataSource dataSource;
 
-    private Properties hibernatePropertis(){
+    private Properties hibernatePropertis() {
         Properties p = new Properties();
-        p.put("hibernate.dialect",environment.getRequiredProperty("hibernate.dialect"));
+        p.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
         return p;
     }
 
     @Bean
     @Autowired
-    public HibernateTransactionManager transactionManager(SessionFactory sessionFactory){
+    public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
         HibernateTransactionManager txManager = new HibernateTransactionManager();
         txManager.setSessionFactory(sessionFactory);
         return txManager;
     }
 
     @Bean
-    public LocalSessionFactoryBean sessionFactoryBean(){
+    public LocalSessionFactoryBean sessionFactoryBean() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
         sessionFactory.setPackagesToScan(new String[]{"com.netcracker.model"});

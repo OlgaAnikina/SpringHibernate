@@ -37,4 +37,8 @@ public class ShopDAOImpl extends BasicDAO implements IShopDAO {
         query.setInteger("id",id);
         query.executeUpdate();
     }
+
+    public void updateShop(Shop shop) {
+        getSession().update(shop);
+    }
 }

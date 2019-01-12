@@ -29,4 +29,6 @@ public class BuyerService implements IBuyerService {
     public void deleteBuyerById(int id) {
         buyerDAO.deleteBuyerById(id);
     }
+    @Override
+    public void updateBuyer(Buyer buyer) { buyerDAO.updateBuyer(buyer);}
 }

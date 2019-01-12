@@ -8,12 +8,11 @@ import java.util.List;
 
 public interface IShopDAO {
     void saveShop(Shop entity);
-
     List<Shop> findAllShop();
-
     Shop findShopById(int id);
-
     void deleteShopById(int id);
+    void updateShop(Shop shop);
+
 
 
 }

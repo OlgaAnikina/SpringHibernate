@@ -27,5 +27,7 @@ public class BuyService implements IBuyService {
     public void deleteBuyById(int id) {
         buyDAO.deleteBuyById(id);
     }
+    @Override
+    public void updateBuy(Buy buy) { buyDAO.updateBuy(buy);}
 
 }

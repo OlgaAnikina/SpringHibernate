@@ -13,5 +13,6 @@ public interface IBuyerDAO {
     Buyer findBuyerById(int id);
 
     void deleteBuyerById(int id);
+    void updateBuyer(Buyer buyer);
 
 }

@@ -20,7 +20,7 @@ public class SpringConfig {
 
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(enviroment.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(enviroment.getRequiredProperty("jdbc.url"));

@@ -38,4 +38,8 @@ public class BuyDAOImpl extends BasicDAO implements IBuyDAO {
         query.setInteger("id",id);
         query.executeUpdate();
     }
+
+    public void updateBuy(Buy buy) {
+        getSession().update(buy);
+    }
 }
